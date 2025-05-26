@@ -1,6 +1,6 @@
 # React で作成したページを GitHubPages で見れるようにしたい
 
-ChatGpt に従い以下の手順で設定した。scriptsはdeployに纏めた。
+ChatGpt に従い以下の手順で設定した。
 
 ✅ 前提条件
 React プロジェクトが create-react-app を使用して作成されている  
@@ -23,6 +23,13 @@ package.json に homepage フィールドを追加します。
     例: ユーザー名が your-username、リポジトリ名が your-repo の場合:
 
         "homepage": "https://your-username.github.io/your-repo"
+
+    (vite.config.jsonにbaseを書き足す必要があった)
+
+        export default defineConfig({
+            plugins: [react()],
+            base: "/ReactOnGitHub/"
+        })
 
     b. scripts セクションの更新  
 package.json の scripts セクションに以下を追加します。

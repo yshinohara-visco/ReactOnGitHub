@@ -1,7 +1,7 @@
-import { Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Home from './pages/Home';
-import Counter from './pages/Counter/Counter';
+import { Routes, Route } from "react-router-dom";
+import Navigation from "./components/Navigation";
+import Home from "./pages/Home";
+import { Counter } from "./pages/Counter/Counter";
 
 function App() {
   return (

@@ -9,7 +9,7 @@ Reactで作成した内容をGitHubPages上で見る事ができる。
 ChatGpt に従い以下の手順で設定した。
 
 ✅ 前提条件
-React プロジェクトが create-react-app を使用して作成されている  
+React プロジェクトが ~~create-react-app~~ npm create vite を使用して作成されている  
 Node.js と npm がインストールされている  
 GitHub アカウントを持っており、公開リポジトリを作成済みである
 

@@ -2,6 +2,9 @@
 
 リンク: [ホーム](https://yshinohara-visco.github.io/ReactOnGitHub/)
 
+deployしてGitHub上でstatusもOKになっているのにページが更新されない時はキャッシュが残っている。
+ctrl+shift+R で更新できた。
+
 ## 概要
 Reactで作成した内容をGitHubPages上で見る事ができる。
 ローカルでビルドとかしなくていいので、練習とか作例はこの形でGitHubに上げとけば見返す時とかに便利そう。  

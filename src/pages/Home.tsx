@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <div style={styles.linkList}>
         <Link to="/counter" style={styles.card}>
           <h2>Counter</h2>
-          <p>useStateを使ったシンプルなカウンター</p>
+          <p>stateの基本的な操作、管理</p>
         </Link>
       </div>
     </div>
@@ -18,22 +18,22 @@ export default function Home() {
 
 const styles = {
   container: {
-    padding: '2rem',
-    maxWidth: '800px',
-    margin: '0 auto',
+    padding: "2rem",
+    maxWidth: "800px",
+    margin: "0 auto",
   },
   linkList: {
-    display: 'grid',
-    gap: '1rem',
-    marginTop: '2rem',
+    display: "grid",
+    gap: "1rem",
+    marginTop: "2rem",
   },
   card: {
-    padding: '1.5rem',
-    border: '1px solid #ddd',
-    borderRadius: '8px',
-    textDecoration: 'none',
-    color: 'inherit',
-    transition: 'box-shadow 0.2s',
-    cursor: 'pointer',
+    padding: "1.5rem",
+    border: "1px solid #ddd",
+    borderRadius: "8px",
+    textDecoration: "none",
+    color: "inherit",
+    transition: "box-shadow 0.2s",
+    cursor: "pointer",
   } as React.CSSProperties,
 };

@@ -1,7 +1,7 @@
 import { Button, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 
-export const CounterMulti = () => {
+export const MultiCounter = () => {
   const [countA, setCountA] = useState(0);
   const [countB, setCountB] = useState(0);
 

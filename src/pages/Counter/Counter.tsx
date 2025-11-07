@@ -1,7 +1,7 @@
 import { Button, CssBaseline, Divider, Stack, Typography } from "@mui/material";
 import { useState } from "react";
-import { CounterMulti } from "./CounterMulti";
-import { WrapCounterVaribale as CounterVariable } from "./CounterVaribale";
+import { MultiCounter } from "./Multi";
+import { VariableCounter } from "./Variable";
 
 export const Counter = () => {
   return (
@@ -9,9 +9,9 @@ export const Counter = () => {
       <Stack padding={2} alignItems="flex-start" spacing={4}>
         <BasicCounter />
         <Divider flexItem />
-        <CounterMulti />
+        <MultiCounter />
         <Divider flexItem />
-        <CounterVariable />
+        <VariableCounter />
       </Stack>
     </CssBaseline>
   );

@@ -1,5 +1,7 @@
 # React で作成したページを GitHubPages で公開するプロジェクト
 
+リンク: [ホーム](https://yshinohara-visco.github.io/ReactOnGitHub/)
+
 ## 概要
 Reactで作成した内容をGitHubPages上で見る事ができる。
 ローカルでビルドとかしなくていいので、練習とか作例はこの形でGitHubに上げとけば見返す時とかに便利そう。  

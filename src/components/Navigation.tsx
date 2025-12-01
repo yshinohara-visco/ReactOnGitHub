@@ -5,6 +5,7 @@ export default function Navigation() {
     <nav style={styles.nav}>
       <Link to="/" style={styles.link}>Home</Link>
       <Link to="/counter" style={styles.link}>Counter</Link>
+      <Link to="/paint" style={styles.link}>Paint</Link>
     </nav>
   );
 }

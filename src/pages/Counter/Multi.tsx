@@ -9,12 +9,18 @@ export const MultiCounter = () => {
 
   return (
     <Stack padding={2} spacing={4}>
-      <Typography variant="h4">Multi Counter</Typography>
+      <Typography variant="h4">Multi Counter (useState + Props)</Typography>
+      <Typography variant="body1" color="text.secondary">
+        このカウンターは useState と props を使用して、親コンポーネントで状態を管理し、子コンポーネントに渡しています。
+      </Typography>
       <Typography variant="h5">Sum: {sum}</Typography>
       <Stack direction="row" spacing={4} justifyContent="center">
         <CounterChild count={countA} setCount={setCountA} />
         <CounterChild count={countB} setCount={setCountB} />
       </Stack>
+      <Typography variant="body2" color="text.secondary">
+        💡 親コンポーネントで2つの状態を管理し、それぞれの子コンポーネントに props として渡しています。
+      </Typography>
     </Stack>
   );
 };

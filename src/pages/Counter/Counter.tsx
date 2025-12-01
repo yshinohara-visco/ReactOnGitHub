@@ -2,6 +2,7 @@ import { Button, CssBaseline, Divider, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { MultiCounter } from "./Multi";
 import { VariableCounter } from "./Variable";
+import { ExternalStoreCounter } from "./ExternalStore";
 
 export const Counter = () => {
   return (
@@ -12,6 +13,8 @@ export const Counter = () => {
         <MultiCounter />
         <Divider flexItem />
         <VariableCounter />
+        <Divider flexItem />
+        <ExternalStoreCounter />
       </Stack>
     </CssBaseline>
   );
@@ -22,7 +25,10 @@ const BasicCounter = () => {
 
   return (
     <Stack padding={2} margin="0 auto" spacing={4}>
-      <Typography variant="h4">Counter</Typography>
+      <Typography variant="h4">Counter (useState)</Typography>
+      <Typography variant="body1" color="text.secondary">
+        このカウンターは useState を使用した最も基本的な実装です。
+      </Typography>
       <Stack
         padding={3}
         spacing={2}
@@ -42,6 +48,9 @@ const BasicCounter = () => {
           </Button>
         </Stack>
       </Stack>
+      <Typography variant="body2" color="text.secondary">
+        💡 状態はこのコンポーネント内でのみ管理され、他のコンポーネントと共有されません。
+      </Typography>
     </Stack>
   );
 };

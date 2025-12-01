@@ -16,7 +16,10 @@ const VariableCounterContent = () => {
 
   return (
     <Stack padding={2} spacing={4} alignItems="flex-start">
-      <Typography variant="h4">Variable Counter</Typography>
+      <Typography variant="h4">Variable Counter (Context API)</Typography>
+      <Typography variant="body1" color="text.secondary">
+        このカウンターは Context API を使用して、複数のコンポーネント間で状態を共有しています。
+      </Typography>
       <Typography variant="h5">Sum: {sum}</Typography>
       <Stack direction="row" spacing={2} alignItems="center">
         <Button variant="contained" onClick={() => addCounter()}>
@@ -38,6 +41,9 @@ const VariableCounterContent = () => {
           <CounterItem key={id} id={id} />
         ))}
       </Stack>
+      <Typography variant="body2" color="text.secondary">
+        💡 Context を使うことで、深くネストされたコンポーネントでも props のバケツリレーなしで状態にアクセスできます。
+      </Typography>
     </Stack>
   );
 };

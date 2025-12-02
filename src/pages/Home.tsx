@@ -1,39 +1,56 @@
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  Container,
+  Stack,
+  Typography,
+} from "@mui/material";
 
 export default function Home() {
   return (
-    <div style={styles.container}>
-      <h1>React 練習プロジェクト</h1>
-      <p>各機能のページへ移動できます</p>
+    <Container maxWidth="sm" sx={{ py: 4 }}>
+      <Stack spacing={4}>
+        <Stack spacing={1}>
+          <Typography variant="h3" component="h1">
+            React 練習プロジェクト
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            各機能のページへ移動できます
+          </Typography>
+        </Stack>
 
-      <div style={styles.linkList}>
-        <Link to="/counter" style={styles.card}>
-          <h2>Counter</h2>
-          <p>stateの基本的な操作、管理</p>
-        </Link>
-      </div>
-    </div>
+        <Stack spacing={2}>
+          <Card variant="outlined">
+            <CardActionArea component={RouterLink} to="/counter">
+              <CardContent>
+                <Typography variant="h5" component="h2" gutterBottom>
+                  Counter
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  stateの基本的な操作、管理
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+
+          <Card variant="outlined">
+            <CardActionArea component={RouterLink} to="/paint">
+              <CardContent>
+                <Typography variant="h5" component="h2" gutterBottom>
+                  Paint
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  お絵描き機能
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Stack>
+      </Stack>
+    </Container>
   );
 }
 
-const styles = {
-  container: {
-    padding: "2rem",
-    maxWidth: "800px",
-    margin: "0 auto",
-  },
-  linkList: {
-    display: "grid",
-    gap: "1rem",
-    marginTop: "2rem",
-  },
-  card: {
-    padding: "1.5rem",
-    border: "1px solid #ddd",
-    borderRadius: "8px",
-    textDecoration: "none",
-    color: "inherit",
-    transition: "box-shadow 0.2s",
-    cursor: "pointer",
-  } as React.CSSProperties,
-};
+

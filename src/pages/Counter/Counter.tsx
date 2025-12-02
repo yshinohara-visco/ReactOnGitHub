@@ -1,4 +1,4 @@
-import { Button, CssBaseline, Divider, Stack, Typography } from "@mui/material";
+import { Button, Divider, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { MultiCounter } from "./Multi";
 import { VariableCounter } from "./Variable";
@@ -6,7 +6,7 @@ import { ExternalStoreCounter } from "./ExternalStore";
 
 export const Counter = () => {
   return (
-    <CssBaseline>
+    <>
       <Stack padding={2} alignItems="flex-start" spacing={4}>
         <BasicCounter />
         <Divider flexItem />
@@ -16,7 +16,7 @@ export const Counter = () => {
         <Divider flexItem />
         <ExternalStoreCounter />
       </Stack>
-    </CssBaseline>
+    </>
   );
 };
 

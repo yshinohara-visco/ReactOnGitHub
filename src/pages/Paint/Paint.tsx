@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  CssBaseline,
   FormControl,
   FormControlLabel,
   FormLabel,
@@ -13,7 +12,7 @@ import {
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PaintCanvas } from "./PaintCanvas";
 import type { PenColor, PenShape, ToolType } from "./types";
 
@@ -49,14 +48,30 @@ export const Paint = () => {
 
   // PaintCanvasにonWheelを追加する修正を行う代わりに、
   // ここではPaintCanvasをラップするdivでイベントを捕捉する。
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const onWheelPreventScroll = (e: WheelEvent) => {
+      e.preventDefault();
+    };
+
+    container.addEventListener("wheel", onWheelPreventScroll, { passive: false });
+
+    return () => {
+      container.removeEventListener("wheel", onWheelPreventScroll);
+    };
+  }, []);
+
   const onCanvasWheel = (e: React.WheelEvent) => {
-    e.preventDefault();
     const delta = e.deltaY > 0 ? 0.9 : 1.1;
     setZoom((prevZoom) => Math.max(0.1, Math.min(5, prevZoom * delta)));
   };
 
   return (
-    <CssBaseline>
+    // <CssBaseline> removed
       <Stack padding={2} spacing={4}>
         <Stack spacing={2}>
           <Typography variant="h3">Paint</Typography>
@@ -68,7 +83,7 @@ export const Paint = () => {
 
         <Stack direction="row" spacing={4} flexWrap="wrap">
           {/* Canvas Area */}
-          <div onWheel={onCanvasWheel}>
+          <div ref={containerRef} onWheel={onCanvasWheel}>
             <PaintCanvas
               width={800}
               height={600}
@@ -181,6 +196,6 @@ export const Paint = () => {
           マウスホイールで拡大縮小、右クリックドラッグでキャンバスを移動できます。
         </Typography>
       </Stack>
-    </CssBaseline>
+    // </CssBaseline> removed
   );
 };

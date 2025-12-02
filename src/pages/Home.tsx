@@ -47,6 +47,19 @@ export default function Home() {
               </CardContent>
             </CardActionArea>
           </Card>
+
+          <Card variant="outlined">
+            <CardActionArea component={RouterLink} to="/api-demo">
+              <CardContent>
+                <Typography variant="h5" component="h2" gutterBottom>
+                  API Demo
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  API連携と仮想化のデモ
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
         </Stack>
       </Stack>
     </Container>

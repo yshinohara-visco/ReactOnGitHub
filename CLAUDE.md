@@ -40,15 +40,28 @@ npm run deploy       # Build and deploy to GitHub Pages
   - `tsconfig.node.json` - Build tooling configuration
   - Root `tsconfig.json` references both
 
+### Routing and UI
+- **Router**: React Router DOM v7 with basename `/ReactOnGitHub` (configured in src/main.tsx:9)
+- **UI Library**: Material-UI (MUI) v7 with Emotion for styling
+- **Navigation**: Client-side routing with centralized Navigation component (src/components/Navigation.tsx)
+- **Page Structure**: Feature-based pages in `src/pages/` directory:
+  - `/` - Home page
+  - `/counter` - Counter demo with multiple state management examples
+  - `/paint` - Canvas-based paint application
+  - `/api-demo` - API demonstration page
+
 ### Source Structure
-- `src/main.tsx` - Application entry point with React StrictMode
-- `src/App.tsx` - Root component
-- Standard Vite project layout with assets and styles
+- `src/main.tsx` - Application entry point with React StrictMode and BrowserRouter setup
+- `src/App.tsx` - Root component with route definitions
+- `src/components/` - Shared components (Navigation, etc.)
+- `src/pages/` - Feature-based page components organized by subdirectories
+  - Each page may have its own subdirectory with related components and utilities
 
 ### Linting
 - ESLint configured for TypeScript with React-specific rules
 - Enforces React Hooks rules and React Refresh patterns
 - Ignores `dist/` and `README.md` (see eslint.config.js:8)
+- Unused variables prefixed with `_` are allowed (see eslint.config.js:26-32)
 
 ## GitHub Pages Deployment
 
@@ -58,4 +71,7 @@ The deployment process uses `gh-pages` package to publish the built application:
 2. `gh-pages` pushes `dist/` contents to `gh-pages` branch
 3. GitHub Pages serves from `gh-pages` branch
 
-**Important**: The `base` setting in vite.config.ts must match the repository name for proper asset loading on GitHub Pages.
+**Important**:
+- The `base` setting in vite.config.ts must match the repository name for proper asset loading on GitHub Pages
+- The `basename` prop in BrowserRouter (src/main.tsx:9) must match the base path
+- Cache issues may occur after deployment - use Ctrl+Shift+R to force refresh (see README.md:5-6)
